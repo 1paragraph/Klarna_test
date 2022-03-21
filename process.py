@@ -54,7 +54,7 @@ def preds(model, index, data):
 st.title('Klarna_test')
 st.subheader('Web based solution to classify predefined data')
 
-if st.button('classify 10,000 samples!', on_click = True):
+if st.button('classify 10,000 samples!'):
     data = data_processing(open_data(current_path)[4], 
                            open_data(current_path)[0], 
                            open_data(current_path)[1], 
