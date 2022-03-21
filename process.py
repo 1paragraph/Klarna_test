@@ -46,10 +46,11 @@ def data_processing(df, num_cols, cat_cols, encoder):
 def preds(model, index, data):
     
     result = model.predict(data)
+    result = pd.DataFrame(index=index, data = result, columns = ['predictions'])
     
-    return pd.Series(index=index, data = result).to_csv().encode('utf-8')
+    return result.to_csv().encode('utf-8')
 
-
+#stramlit solution
 
 st.title('Klarna_test')
 st.subheader('Web based solution to classify predefined data')
@@ -62,24 +63,11 @@ if st.button('classify 10,000 samples!'):
     
     csv_file = preds(open_data(current_path)[3], open_data(current_path)[4].index, data)
     
-    st.success('This is a success message!')
+    st.success('we classified all the data!')
 
     st.download_button('Download results in csv', data = csv_file, file_name = 'results.csv')
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
 
