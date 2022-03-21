@@ -64,7 +64,7 @@ if st.button('classify 10,000 samples!'):
     
     st.success('This is a success message!')
 
-    #st.download_button('Download results in csv', data = csv_file, file_name = 'results.csv')
+    st.download_button('Download results in csv', data = csv_file, file_name = 'results.csv')
     
 
 
