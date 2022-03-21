@@ -46,7 +46,8 @@ def data_processing(df, num_cols, cat_cols, encoder):
 def preds(model, index, data):
     
     result = model.predict(data)
-    result = pd.DataFrame(index=index, data = result, columns = ['predictions'])
+    result = pd.DataFrame(index=index, data = result).reset_index()
+    result.columns = ['uuid', 'pd']
     
     return result.to_csv().encode('utf-8')
 
