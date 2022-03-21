@@ -62,9 +62,9 @@ if st.button('classify 10,000 samples!', on_click = True):
     
     csv_file = preds(open_data(current_path)[3], open_data(current_path)[4].index, data)
     
-    st.success('This is a success message!')
+    #st.success('This is a success message!')
 
-    st.download_button('Download results in csv', data = csv_file, file_name = 'results.csv')
+    #st.download_button('Download results in csv', data = csv_file, file_name = 'results.csv')
     
 
 
